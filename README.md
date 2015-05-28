@@ -1,51 +1,30 @@
-## shortid  [![Build Status](http://img.shields.io/travis/dylang/shortid.svg)](https://travis-ci.org/dylang/shortid) [![shortid](http://img.shields.io/npm/dm/shortid.svg)](https://www.npmjs.org/package/shortid)
+## shortid32  [![Build Status](http://img.shields.io/travis/cuvva/shortid32.svg)](https://travis-ci.org/cuvva/shortid32) [![shortid32](http://img.shields.io/npm/dm/shortid32.svg)](https://www.npmjs.org/package/shortid32)
 
-> Amazingly short non-sequential url-friendly unique id generator.
+> Amazingly short non-sequential human-friendly unique id generator.
 
+ShortId32 creates amazingly short non-sequential human-friendly unique ids.  Perfect for url shorteners, and any other id users might see.
 
-
-
-
-
-
-
-ShortId creates amazingly short non-sequential url-friendly unique ids.  Perfect for url shorteners, MongoDB and Reddis ids, and any other id users might see.
-
- * By default 7-14 url-friendly characters: `A-Z`, `a-z`, `0-9`, `_-`
+ * By default 7-14 human-friendly characters: `A-Z`, `0-9`, excluding the commonly confused `01OI`
  * Non-sequential so they are not predictable.
  * Supports `cluster` (automatically), custom seeds, custom alphabet.
  * Can generate any number of ids without duplicates, even millions per day.
  * Perfect for games, especially if you are concerned about cheating so you don't want an easily guessable id.
  * Apps can be restarted any number of times without any chance of repeating an id.
- * Popular replacement for Mongo ID/Mongoose ID.
  * Works in Node, io.js, and web browsers.
  * Includes [Mocha](http://visionmedia.github.com/mocha/) tests.
-
-
 
 ### Usage
 
 ```js
-var shortid = require('shortid');
+var shortid = require('shortid32');
 
 console.log(shortid.generate());
-//PPBqWA9
+//PPBQWA9
 ```
-
-Mongoose Unique Id
-```js
-_id: {
-    type: String,
-    unique: true,
-    'default': shortid.generate
-},
-```
-
-
 
 ### Browser Compatibility
 
-The best way to use `shortid` in the browser is via [browserify](http://browserify.org/) or [webpack](http://webpack.github.io/).
+The best way to use `shortid32` in the browser is via [browserify](http://browserify.org/) or [webpack](http://webpack.github.io/).
 
 These tools will automatically only include the files necessary for browser compatibility.
 
@@ -56,54 +35,25 @@ All tests will run in the browser as well:
 $ grunt build open
 ```
 
-
-
 ### Example
 
 ```js
 ~/projects/shortid ❯ node examples/examples.js
-eWRhpRV
-23TplPdS
-46Juzcyx
-dBvJIh-H
-2WEKaVNO
-7oet_d9Z
-dogPzIz8
-nYrnfYEv
-a4vhAoFG
-hwX6aOr7
+WKTQBXJF
+QKCTWBXJF
+WKZVQMXJP
+Q3ATWB5CF
+QK5VQMXCP
+WKQVQMXJF
+Q3FTQB5CP
+WK6VWM5JF
+QKGTWBXCF
+W3TVWBXJP
 ```
-
-
-#### Real World Examples
-
-`shortId` was created for Node Knockout 2011 winner for Most Fun [Doodle Or Die](http://doodleordie.com).
-Millions of doodles have been saved with `shortId` filenames. Every log message gets a `shortId` to make it easy
-for us to look up later.
-
-Here are some other projects that use shortId:
-
-* [bevy](https://npmjs.org/package/bevy) - A simple server to manage multiple Node services.
-* [capre](https://npmjs.org/package/capre) - Cross-Server Data Replication.
-* [cordova-build](https://www.npmjs.org/package/cordova-build) - an alternative to phonegap build that runs on your servers/agents.
-* [couchdb-tools](https://www.npmjs.org/package/couchdb-tools) - A library of handy functions for use when working with CouchDB documents.
-* [CleverStack/clever-email](https://github.com/CleverStack/clever-email) - E-mail system for CleverStack.
-* [CloudTypes](https://github.com/ticup/CloudTypes) - JavaScript end2end implementation of the Cloud Types model for Eventual Consistency programming.
-* [dnode-tarantula](https://github.com/jutaz/dnode-tarantula) - an asynchronous rpc and event system for node.js based on dnode-protocol and TCP sockets.
-* [mongoose-url-shortener](https://www.npmjs.org/package/mongoose-url-shortener) - A simple URL Shortening library for NodeJS using Promises/A+ results.
-* [mozilla/smokejumper](https://github.com/mozilla/smokejumper) - The Smoke Jumper project is an effort to bring dead simple, secure, P2P file sharing to Firefox.
-* [shortness](https://npmjs.org/package/shortness) - Node based URL shortener that uses SQLite.
-* [file-db](https://npmjs.org/package/file-db) - Document database that uses directories and files to store its data, supporting nested key-value objects in named collections.
-* [resume-generator](https://www.npmjs.org/package/resume-generator) - Resume Generator.
-* [riffmint](https://npmjs.org/package/riffmint) - Collaboration in musical space.
-* [rap1ds/dippa](https://github.com/rap1ds/dippa) - Dippa Editor – A web-based LaTeX editor
-
-
-
 
 ### API
 
-`var shortid = require('shortid');`
+`var shortid = require('shortid32');`
 
 ---------------------------------------
 
@@ -129,15 +79,13 @@ __Default:__ `'23456789ABCDEFGHJKLMNPQRSTUVWXYZ'`
 
 __Returns__ new alphabet as a `string`
 
-__Recommendation:__ If you don't like _ or -, you can to set new characters to use.
-
 __Optional__
 
 Change the characters used.
 
 You must provide a string of all 32 unique characters. Order is not important.
 
-The default characters provided were selected because they are url safe.
+The default characters provided were selected because they are human friendly.
 
 __Example__
 
@@ -145,7 +93,6 @@ __Example__
 // any 32 unicode characters work, but I wouldn't recommend this.
 shortid.characters('ⒶⒷⒸⒹⒺⒻⒼⒽⒿⓀⓁⓂⓃⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ②③④⑤⑥⑦⑧⑨');
 ```
-
 
 ---------------------------------------
 
@@ -209,16 +156,12 @@ __Example__
 shortId.seed(1000);
 ```
 
-
-
-
-
-
 ### About the Author
 
 This is a modification of [`shortid`](//github.com/dylang/shortid). The original author of that software is [**Dylan Greene**](//github.com/dylang).
 
 ### License
+
 Copyright (c) 2015 Dylan Greene, contributors.
 
 Released under the [MIT license](https://tldrlegal.com/license/mit-license).
