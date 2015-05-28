@@ -1,4 +1,4 @@
-## shortid32  [![Build Status](http://img.shields.io/travis/cuvva/shortid32.svg)](https://travis-ci.org/cuvva/shortid32) [![shortid32](http://img.shields.io/npm/dm/shortid32.svg)](https://www.npmjs.org/package/shortid32)
+## shortid32  [![Build Status](http://img.shields.io/travis/cuvva/shortid32.svg)](https://travis-ci.org/cuvva/shortid32) [![shortid32](http://img.shields.io/npm/v/shortid32.svg)](https://www.npmjs.org/package/shortid32)
 
 > Amazingly short non-sequential human-friendly unique id generator.
 
