@@ -12,30 +12,30 @@ describe('testing alphabet', function(done) {
 
     it('should create a unique random alphabet with each seed', function(done) {
         alphabet.seed(1);
-        expect(alphabet.shuffled()).to.equal('ylZM7VHLvOFcohp01x-fXNr8P_tqin6RkgWGm4SIDdK5s2TAJebzQEBUwuY9j3aC');
+        expect(alphabet.shuffled()).to.equal('KCYS5WPRGTM7D9E23JZAXQF6UVBH8L4N');
 
         alphabet.seed(1234);
-        expect(alphabet.shuffled()).to.equal('ef4w9iMboqLOQdWu3hKI72A0VZpCtzDlXk5_a6cFSNYGnH-gmsP1UBxvTRJjE8ry');
+        expect(alphabet.shuffled()).to.equal('9A4K7CS8FHTUVBYJ3DRQ52N6XZLMGPWE');
         done();
     });
 
     it('should return the same alphabet with a single seed', function(done) {
         alphabet.seed(1);
-        expect(alphabet.shuffled()).to.equal('ylZM7VHLvOFcohp01x-fXNr8P_tqin6RkgWGm4SIDdK5s2TAJebzQEBUwuY9j3aC');
+        expect(alphabet.shuffled()).to.equal('KCYS5WPRGTM7D9E23JZAXQF6UVBH8L4N');
 
         alphabet.seed(1);
-        expect(alphabet.shuffled()).to.equal('ylZM7VHLvOFcohp01x-fXNr8P_tqin6RkgWGm4SIDdK5s2TAJebzQEBUwuY9j3aC');
+        expect(alphabet.shuffled()).to.equal('KCYS5WPRGTM7D9E23JZAXQF6UVBH8L4N');
         done();
     });
 
-    it('should shuffle into a 64-character string of unique characters', function(done){
+    it('should shuffle into a 32-character string of unique characters', function(done){
         // use default character set
         alphabet.characters(false);
 
         // use the randomly sorted default set to make new set
         alphabet.characters(alphabet.shuffled());
 
-        expect(alphabet.shuffled()).to.equal('WN3JLu5ARbdoPx_ylgC09eqvzant-8HEX1YKr7BsIhTViZUm2pcGQD4wk6jOfMFS');
+        expect(alphabet.shuffled()).to.equal('JM4US8Q6EVAW7RDKC3NGLF95BHT2PZYX');
 
         done();
     });
@@ -49,11 +49,11 @@ describe('testing alphabet', function(done) {
             };
         };
 
-        expect(fn('-‾zʎxʍʌnʇsɹbdouɯlʞɾıɥƃɟǝpɔqɐzʎxʍʌnʇsɹbdouɯlʞɾıɥƃɟǝpɔqɐ9876543210')).to.throw(Error, 'Custom alphabet for shortid must be 64 unique characters. These characters were not unique: z, ʎ, x, ʍ, ʌ, n, ʇ, s, ɹ, b, d, o, u, ɯ, l, ʞ, ɾ, ı, ɥ, ƃ, ɟ, ǝ, p, ɔ, q, ɐ');
-        expect(fn('abc')).to.throw(Error, /Custom alphabet for shortid must be 64 unique characters./);
+        expect(fn('zʎxʍʌnʇsɹbquɯlʞɾɥƃɟǝpɔq298765432')).to.throw(Error, 'Custom alphabet for shortid must be 32 unique characters. These characters were not unique: q, 2');
+        expect(fn('abc')).to.throw(Error, /Custom alphabet for shortid must be 32 unique characters./);
 
-        alphabet.characters('①②③④⑤⑥⑦⑧⑨⑩⑪⑫ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ');
-        expect(alphabet.shuffled()).to.equal('ⓌⒿⓧⓚ⑧ⓣⓕⓙⓉⓜⓓⒶⓂⒻⓃ①②ⓋⓩⒹⓥⓛⓅ⑨ⓝⓨⓇⓄⒼⓁ⑦ⓟⒾⒺⓤⓔⓀ⑤ⓠⓖⓑⒷⓘ⑥Ⓠ③ⓡⓎⓗⒸ⑫ⓍⓞⓒⓏⓢⓊⓈⓦ⑩Ⓗ④⑪ⓐ');
+        alphabet.characters('②③④⑤⑥⑦⑧⑨ⒶⒷⒸⒹⒺⒻⒼⒽⒿⓀⓁⓂⓃⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ');
+        expect(alphabet.shuffled()).to.equal('ⓀⒸⓎⓈ⑤ⓌⓅⓇⒼⓉⓂ⑦Ⓓ⑨Ⓔ②③ⒿⓏⒶⓍⓆⒻ⑥ⓊⓋⒷⒽ⑧Ⓛ④Ⓝ');
         done();
 
     });
