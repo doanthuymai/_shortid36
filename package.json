@@ -18,10 +18,7 @@
     "tinyid"
   ],
   "homepage": "https://github.com/cuvva/shortid32",
-  "author": {
-    "name": "Dylan Greene",
-    "email": "dylang@gmail.com"
-  },
+  "author": "Dylan Greene",
   "contributors": [
     "James Billingham <james@jamesbillingham.com> (http://jamesbillingham.com)"
   ],
