@@ -17,14 +17,14 @@
     "shortid",
     "tinyid"
   ],
-  "homepage": "https://github.com/cuvva/shortid32",
+  "homepage": "https://github.com/billinghamj/shortid32",
   "author": "Dylan Greene",
   "contributors": [
     "James Billingham <james@jamesbillingham.com> (http://jamesbillingham.com)"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cuvva/shortid32.git"
+    "url": "https://github.com/billinghamj/shortid32.git"
   },
   "browser": {
     "./lib/util/cluster-worker-id.js": "./lib/util/cluster-worker-id-browser.js",
