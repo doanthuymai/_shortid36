@@ -19,9 +19,6 @@
   ],
   "homepage": "https://github.com/ThuyMai/_shortid36",
   "author": "Dylan Greene",
-  "contributors": [
-    "James Billingham <james@jamesbillingham.com> (http://jamesbillingham.com)"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ThuyMai/_shortid36"
