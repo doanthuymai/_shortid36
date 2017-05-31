@@ -2,7 +2,7 @@
 
 > Amazingly short non-sequential human-friendly unique id generator.
 
-ShortId32 creates amazingly short non-sequential human-friendly unique ids.  Perfect for url shorteners, and any other id users might see.
+ShortId36 is based on ShortId32 - creates amazingly short non-sequential human-friendly unique ids.  Perfect for url shorteners, and any other id users might see.
 
  * By default 7-14 human-friendly characters: `A-Z`, `0-9`, including `01OI`
  * Non-sequential so they are not predictable.
@@ -17,6 +17,10 @@ ShortId32 creates amazingly short non-sequential human-friendly unique ids.  Per
 
 ```js
 var shortid = require('shortid-36');
+
+or
+
+import shortid from 'shortid-36';
 
 console.log(shortid.generate());
 //PPBQWA9
