@@ -4,7 +4,7 @@
 
 ShortId32 creates amazingly short non-sequential human-friendly unique ids.  Perfect for url shorteners, and any other id users might see.
 
- * By default 7-14 human-friendly characters: `A-Z`, `0-9`, excluding the commonly confused `01OI`
+ * By default 7-14 human-friendly characters: `A-Z`, `0-9`, including `01OI`
  * Non-sequential so they are not predictable.
  * Supports `cluster` (automatically), custom seeds, custom alphabet.
  * Can generate any number of ids without duplicates, even millions per day.
@@ -16,7 +16,7 @@ ShortId32 creates amazingly short non-sequential human-friendly unique ids.  Per
 ### Usage
 
 ```js
-var shortid = require('shortid32');
+var shortid = require('shortid-36');
 
 console.log(shortid.generate());
 //PPBQWA9
@@ -24,7 +24,7 @@ console.log(shortid.generate());
 
 ### Browser Compatibility
 
-The best way to use `shortid32` in the browser is via [browserify](http://browserify.org/) or [webpack](http://webpack.github.io/).
+The best way to use `shortid-36` in the browser is via [browserify](http://browserify.org/) or [webpack](http://webpack.github.io/).
 
 These tools will automatically only include the files necessary for browser compatibility.
 
@@ -39,7 +39,7 @@ $ grunt build open
 
 ```js
 ~/projects/shortid ❯ node examples/examples.js
-WKTQBXJF
+FJ998VEDI
 QKCTWBXJF
 WKZVQMXJP
 Q3ATWB5CF
@@ -53,7 +53,7 @@ W3TVWBXJP
 
 ### API
 
-`var shortid = require('shortid32');`
+`var shortid = require('shortid-36');`
 
 ---------------------------------------
 
@@ -75,7 +75,7 @@ users.insert({
 
 #### `characters(string)`
 
-__Default:__ `'23456789ABCDEFGHJKLMNPQRSTUVWXYZ'`
+__Default:__ `'0123456789ABCDEFGHIJKLMNPOQRSTUVWXYZ'`
 
 __Returns__ new alphabet as a `string`
 
@@ -90,7 +90,7 @@ The default characters provided were selected because they are human friendly.
 __Example__
 
 ```js
-// any 32 unicode characters work, but I wouldn't recommend this.
+// any 36 unicode characters work, but I wouldn't recommend this.
 shortid.characters('ⒶⒷⒸⒹⒺⒻⒼⒽⒿⓀⓁⓂⓃⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ②③④⑤⑥⑦⑧⑨');
 ```
 
