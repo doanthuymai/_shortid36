@@ -11,7 +11,7 @@ ShortId36 is based on ShortId32 - creates amazingly short non-sequential human-f
  * Perfect for games, especially if you are concerned about cheating so you don't want an easily guessable id.
  * Apps can be restarted any number of times without any chance of repeating an id.
  * Works in Node, io.js, and web browsers.
- * Includes [Mocha](http://visionmedia.github.com/mocha/) tests.
+ * Includes [Mocha](http://mochajs.org/) tests.
 
 ### Usage
 
